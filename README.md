@@ -1,14 +1,166 @@
-# A-Dollar-Foundation
-A Dollar Foundation
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A Dollar Foundation - It only takes a dollar to change a life</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === General Styles === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* === Header & Navigation === */
+    header {
+      background: #f4f4f4;
+      padding: 10px 0;
+      border-bottom: 2px solid #004080;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo svg {
+      margin-right: 10px;
+    }
+    .logo-text h1 {
+      font-size: 24px;
+      color: #004080;
+    }
+    .logo-text p {
+      font-size: 14px;
+      color: #666;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+    }
+
+    /* === Hero Section === */
+    .hero {
+      background: url('hero-image.jpg') center/cover no-repeat;
+      background-color: #004080; /* fallback color */
+      color: #fff;
+      text-align: center;
+      padding: 100px 0;
+    }
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* === Buttons === */
+    .btn {
+      display: inline-block;
+      background: #32CD32;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* === Sections === */
+    section {
+      padding: 60px 0;
+      text-align: center;
+    }
+    /* Family Card */
+    .family-card {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      border-radius: 5px;
+    }
+
+    /* === Forms === */
+    form {
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    form input[type="submit"],
+    form button {
+      background: #32CD32;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* === Footer === */
+    footer {
+      background: #004080;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    /* === Responsive Navigation === */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container header-container">
       <div class="logo">
@@ -38,6 +190,7 @@ A Dollar Foundation
     </div>
   </header>
 
+  <!-- Main Content -->
   <main>
     <!-- Home / Hero Section -->
     <section id="home" class="hero">
@@ -53,13 +206,13 @@ A Dollar Foundation
       <div class="container">
         <h2>Families in Need</h2>
         <p>Learn about the families we're supporting and how your donation can make an impact.</p>
-        <!-- Example Family Card (Duplicate or modify for each family) -->
+        <!-- Example Family Card (Duplicate for each family as needed) -->
         <div class="family-card">
           <h3>Family Name</h3>
           <p>A brief story about the family and why they need support.</p>
           <a href="#donate" class="btn">Donate $1</a>
         </div>
-        <!-- Add more family cards as needed -->
+        <!-- Add more family cards here -->
       </div>
     </section>
 
@@ -74,7 +227,6 @@ A Dollar Foundation
           <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
           <input type="submit" value="Donate $1" class="btn" />
         </form>
-        <!-- You can also link to a different donation processor or page if preferred -->
       </div>
     </section>
 
@@ -83,7 +235,8 @@ A Dollar Foundation
       <div class="container">
         <h2>Contact Us</h2>
         <p>Have questions or need more information? Send us a message!</p>
-        <!-- Contact form using Formspree (replace "your-form-id" with your actual Formspree ID) -->
+        <!-- Contact form using Formspree -->
+        <!-- Replace "your-form-id" with your actual Formspree ID -->
         <form action="https://formspree.io/f/your-form-id" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -100,188 +253,23 @@ A Dollar Foundation
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 A Dollar Foundation. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-/* General Styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Container */
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Header & Navigation */
-header {
-  background: #f4f4f4;
-  padding: 10px 0;
-  border-bottom: 2px solid #004080;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo svg {
-  margin-right: 10px;
-}
-
-.logo-text h1 {
-  font-size: 24px;
-  color: #004080;
-}
-
-.logo-text p {
-  font-size: 14px;
-  color: #666;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #004080;
-  font-weight: bold;
-}
-
-/* Hero Section */
-.hero {
-  background: url('hero-image.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 100px 0;
-}
-
-.hero h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: #32CD32;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Section Styles */
-section {
-  padding: 60px 0;
-  text-align: center;
-}
-
-/* Family Card */
-.family-card {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 400px;
-  border-radius: 5px;
-}
-
-/* Forms */
-form {
-  max-width: 500px;
-  margin: auto;
-  text-align: left;
-}
-
-form label {
-  display: block;
-  margin: 10px 0 5px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-form input[type="submit"],
-form button {
-  background: #32CD32;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/* Footer */
-footer {
-  background: #004080;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav ul li {
-    margin: 10px 0;
-  }
-}
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
