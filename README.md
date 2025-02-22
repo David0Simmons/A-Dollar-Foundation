@@ -97,6 +97,7 @@
       padding: 60px 0;
       text-align: center;
     }
+
     /* Family Card */
     .family-card {
       background: #f4f4f4;
@@ -136,12 +137,47 @@
       border-radius: 5px;
     }
 
+    /* === Sidebar === */
+    .sidebar-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .sidebar {
+      width: 48%;
+      padding: 20px;
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .sidebar h3 {
+      color: #004080;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .sidebar p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
     /* === Footer === */
     footer {
       background: #004080;
       color: #fff;
       padding: 20px 0;
       text-align: center;
+    }
+
+    /* === Donate Section Styles === */
+    #donate {
+      text-align: center;
+    }
+
+    .donate-button-container {
+      margin-top: 20px; /* Add space between text and button */
+      display: flex;
+      justify-content: center; /* Center the button horizontally */
     }
 
     /* === Responsive Navigation === */
@@ -155,6 +191,13 @@
       }
       nav ul li {
         margin: 10px 0;
+      }
+      .sidebar-container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        margin-top: 20px;
       }
     }
   </style>
@@ -195,9 +238,26 @@
     <!-- Home / Hero Section -->
     <section id="home" class="hero">
       <div class="container">
-        <h2>Welcome to A Dollar Foundation</h2>
+        <h2>Welcome To A Dollar Foundation</h2>
         <p>Changing lives one dollar at a time. Join us in making a difference.</p>
         <a href="#donate" class="btn">Donate Now</a>
+      </div>
+    </section>
+
+    <!-- Sidebar Section -->
+    <section id="sidebar">
+      <div class="container sidebar-container">
+        <!-- First Sidebar Box -->
+        <div class="sidebar">
+          <h3>Our Future Vision</h3>
+          <p>The future of this organization is to support those in need by just donating one dollar per person. That's it!! All we ask is that you consider donating just One Dollar, nothing more and nothing less.</p>
+        </div>
+
+        <!-- Second Sidebar Box -->
+        <div class="sidebar">
+          <h3>The Power of One Dollar</h3>
+          <p>Your Dollar could mean the world to someone else, embrace that joy of giving just One Dollar to a greater cause.</p>
+        </div>
       </div>
     </section>
 
@@ -221,12 +281,15 @@
       <div class="container">
         <h2>Donate $1</h2>
         <p>Your dollar can help change a life. Click below to donate.</p>
-        <!-- PayPal Donation Button Example -->
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-          <!-- Replace YOUR_BUTTON_ID with your actual PayPal Button ID -->
-          <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
-          <input type="submit" value="Donate $1" class="btn" />
-        </form>
+
+        <!-- PayPal Donation Button -->
+        <div class="donate-button-container">
+          <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <!-- Replace YOUR_BUTTON_ID with your actual PayPal Button ID -->
+            <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
+            <input type="submit" value="Donate $1" class="btn" />
+          </form>
+               </div>
       </div>
     </section>
 
@@ -237,7 +300,7 @@
         <p>Have questions or need more information? Send us a message!</p>
         <!-- Contact form using Formspree -->
         <!-- Replace "your-form-id" with your actual Formspree ID -->
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <form action="https://formspree.io/f/mjkgjnyp" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" placeholder="Your name" required />
 
@@ -245,9 +308,9 @@
           <input type="email" id="email" name="email" placeholder="Your email" required />
 
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+          <textarea id="message" name="message" placeholder="Your message" required></textarea>
 
-          <button type="submit" class="btn">Send Message</button>
+          <input type="submit" value="Send Message" class="btn" />
         </form>
       </div>
     </section>
@@ -255,21 +318,9 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 A Dollar Foundation. All Rights Reserved.</p>
-    </div>
+    <p>&copy; 2025 A Dollar Foundation. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
-        });
-      });
-    });
-  </script>
 </body>
 </html>
+
+
